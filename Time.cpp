@@ -28,12 +28,10 @@ ostream &operator << (ostream &output, Time &t) {
 
 Time Time :: operator++(int){
 	Time temp(*this);
-	if (mins <= 59)
+	++mins;
+	if (mins >= 60)
 	{
-		operator ++(mins);
-	}
-	else {
-		hours++;
+		++hours;
 	}
 	return temp;
 }
